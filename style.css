@@ -175,6 +175,11 @@ h1, h2, h3{
 
 .nav-toggle{
   display: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .nav-toggle span,
 .nav-toggle span::before,
@@ -258,13 +263,15 @@ main{
 
 .pill{
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--paper);
   background: var(--ink);
   border: 1px solid var(--ink);
-  border-radius: 999px;
-  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  padding: 0.75rem 1.4rem;
   transition: opacity 0.15s ease;
 }
 .pill:hover{ opacity: 0.8; }
@@ -307,9 +314,26 @@ main{
 .block h2{
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.8rem;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-bottom: 2.2rem;
+}
+
+.block h2 .tab{
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gold);
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
 }
 
 .lede{
@@ -486,7 +510,7 @@ footer{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    background: var(--ink);
+    background: var(--paper);
     box-shadow: none;
     padding: 6rem 2rem 2.5rem;
     justify-content: space-between;
@@ -498,18 +522,13 @@ footer{
   }
 
   .spine-name{
-    position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
-    background: transparent;
-    border-color: var(--paper);
-    color: var(--paper);
+    display: none;
   }
 
   .spine ul{ gap: 0; }
 
   .spine li{
-    border-top: 1px solid rgba(247,245,241,0.18);
+    border-top: 1px solid var(--line);
   }
   .spine li:first-child{ border-top: none; }
 
@@ -518,19 +537,19 @@ footer{
     font-family: var(--font-display);
     font-size: 2.1rem;
     font-weight: 600;
-    color: var(--paper);
+    color: var(--ink);
     gap: 1rem;
     font-variation-settings: "WONK" 0;
   }
-  .spine a:hover{ color: var(--paper); opacity: 0.7; }
-  .spine a.is-active{ color: var(--paper); }
-  .spine a.is-active .tab{ color: var(--gold); }
+  .spine a:hover{ color: var(--ink); opacity: 0.6; }
+  .spine a.is-active{ color: var(--ink); }
+  .spine a.is-active .tab{ color: var(--ink); }
 
   .spine .tab{
     font-family: var(--font-mono);
     font-size: 0.95rem;
     font-weight: 400;
-    color: var(--gold);
+    color: var(--ink);
     background: none;
     border: none;
     width: auto;
@@ -546,13 +565,13 @@ footer{
     width: 100%;
   }
   .lang-toggle{
-    border-color: var(--paper);
-    color: var(--paper);
+    border-color: var(--ink);
+    color: var(--ink);
   }
-  .lang-toggle:hover{ background: var(--paper); color: var(--ink); }
+  .lang-toggle:hover{ background: var(--ink); color: var(--paper); }
   .spine-cta{
-    color: var(--paper);
-    border-bottom-color: var(--paper);
+    color: var(--ink);
+    border-bottom-color: var(--ink);
   }
 
   .nav-toggle{
@@ -580,7 +599,7 @@ footer{
   .nav-toggle.is-open span,
   .nav-toggle.is-open span::before,
   .nav-toggle.is-open span::after{
-    background: var(--paper);
+    background: var(--ink);
   }
   .nav-toggle.is-open span{ opacity: 0; }
   .nav-toggle.is-open span::before{
