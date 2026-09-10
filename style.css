@@ -69,36 +69,6 @@ h1, h2, h3{
 }
 .topbar > *{ pointer-events: auto; }
 
-.current-section{
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.current-section.is-visible{ opacity: 1; }
-.current-section .tab{
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--slate);
-}
-.current-section #currentLabel{
-  display: inline-block;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.current-section #currentLabel.is-sliding{
-  transform: translateY(-8px);
-  opacity: 0;
-}
-
 .topbar-right{
   display: flex;
   align-items: center;
@@ -120,7 +90,7 @@ h1, h2, h3{
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: 2px;
   padding: 0.35rem 0.8rem;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
@@ -356,6 +326,8 @@ main{
 }
 
 .block h2{
+  position: sticky;
+  top: var(--topbar-h);
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -364,7 +336,10 @@ main{
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-bottom: 2.2rem;
+  margin: 0 0 2.2rem;
+  padding: 1rem 0;
+  background: var(--paper);
+  z-index: 20;
 }
 
 .block h2 .tab{
@@ -539,8 +514,6 @@ footer{
    Responsive
    =========================================================== */
 @media (max-width: 900px){
-  .current-section{ display: none; }
-
   .topbar{ padding: 0 1.4rem; }
   main{ padding: 0 1.4rem; }
 
