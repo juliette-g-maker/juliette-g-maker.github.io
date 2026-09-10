@@ -328,6 +328,7 @@ main{
 .block h2{
   position: sticky;
   top: var(--topbar-h);
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.7rem;
