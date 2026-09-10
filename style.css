@@ -325,9 +325,6 @@ main{
 }
 
 .block h2{
-  position: sticky;
-  top: var(--topbar-h);
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -337,9 +334,6 @@ main{
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0 0 2.2rem;
-  padding: 1rem 0;
-  background: var(--paper);
-  z-index: 20;
 }
 
 .block h2 .tab{
