@@ -64,10 +64,9 @@ h1, h2, h3{
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  background: var(--paper);
   z-index: 70;
-  pointer-events: none;
 }
-.topbar > *{ pointer-events: auto; }
 
 .topbar-right{
   display: flex;
