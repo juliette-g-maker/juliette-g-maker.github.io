@@ -7,19 +7,23 @@
 <meta name="description" content="Juliette Guyot — du commerce du luxe (Chanel) à l'analyse de données. Master in Digital Marketing & Data Analytics, emlyon x Sorbonne.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-<button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="spine">
-  <span></span>
-</button>
+<header class="topbar">
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="spine">
+    <span></span>
+  </button>
+  <div class="topbar-right">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+    <a class="topbar-initials" href="#top">JG</a>
+  </div>
+</header>
 
 <nav class="spine" id="spine">
-  <a class="spine-name" href="#top">JG</a>
   <ul id="spineList">
-    <span class="spine-indicator" id="spineIndicator" aria-hidden="true"></span>
     <li><a href="#profil"><span class="tab">01</span> <span class="t-fr">Profil</span><span class="t-en" hidden>Profile</span></a></li>
     <li><a href="#experience"><span class="tab">02</span> <span class="t-fr">Expérience</span><span class="t-en" hidden>Experience</span></a></li>
     <li><a href="#formation"><span class="tab">03</span> <span class="t-fr">Formation</span><span class="t-en" hidden>Education</span></a></li>
@@ -28,8 +32,8 @@
     <li><a href="#contact"><span class="tab">06</span> <span class="t-fr">Contact</span><span class="t-en" hidden>Contact</span></a></li>
   </ul>
   <div class="spine-footer">
-    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
-    <a class="spine-cta" href="mailto:juliette-guyot@outlook.fr"><span class="t-fr">Écrire</span><span class="t-en" hidden>Email me</span></a>
+    <a class="spine-footer-link" href="mailto:juliette-guyot@outlook.fr">juliette-guyot@outlook.fr</a>
+    <a class="spine-footer-link" href="https://www.linkedin.com/in/juliette-guyot-634b57249" target="_blank" rel="noopener">LinkedIn ↗</a>
   </div>
 </nav>
 
@@ -347,27 +351,19 @@
   const savedLang = localStorage.getItem('site-lang');
   if (savedLang === 'en') setLang('en');
 
-  // Scrollspy: highlight active section + slide indicator
+  // Scrollspy: highlight active section in the menu
   const navLinks = Array.from(spine.querySelectorAll('ul a[href^="#"]'));
-  const indicator = document.getElementById('spineIndicator');
   const sections = navLinks
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
-
-  function setActive(link) {
-    if (!link) return;
-    navLinks.forEach(l => l.classList.remove('is-active'));
-    link.classList.add('is-active');
-    indicator.style.transform = `translateY(${link.offsetTop}px)`;
-    indicator.classList.add('is-visible');
-  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = '#' + entry.target.id;
         const link = navLinks.find(l => l.getAttribute('href') === id);
-        setActive(link);
+        navLinks.forEach(l => l.classList.remove('is-active'));
+        if (link) link.classList.add('is-active');
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
