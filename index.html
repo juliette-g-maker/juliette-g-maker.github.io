@@ -7,8 +7,8 @@
 <meta name="description" content="Juliette Guyot — du commerce du luxe (Chanel) à l'analyse de données. Master in Digital Marketing & Data Analytics, emlyon x Sorbonne.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -18,15 +18,19 @@
 
 <nav class="spine" id="spine">
   <a class="spine-name" href="#top">JG</a>
-  <ul>
-    <li><a href="#profil"><span class="tab">A</span> Profil</a></li>
-    <li><a href="#experience"><span class="tab">B</span> Expérience</a></li>
-    <li><a href="#formation"><span class="tab">C</span> Formation</a></li>
-    <li><a href="#competences"><span class="tab">D</span> Compétences</a></li>
-    <li><a href="#projet"><span class="tab">E</span> Projet</a></li>
-    <li><a href="#contact"><span class="tab">F</span> Contact</a></li>
+  <ul id="spineList">
+    <span class="spine-indicator" id="spineIndicator" aria-hidden="true"></span>
+    <li><a href="#profil"><span class="tab">01</span> <span class="t-fr">Profil</span><span class="t-en" hidden>Profile</span></a></li>
+    <li><a href="#experience"><span class="tab">02</span> <span class="t-fr">Expérience</span><span class="t-en" hidden>Experience</span></a></li>
+    <li><a href="#formation"><span class="tab">03</span> <span class="t-fr">Formation</span><span class="t-en" hidden>Education</span></a></li>
+    <li><a href="#competences"><span class="tab">04</span> <span class="t-fr">Compétences</span><span class="t-en" hidden>Skills</span></a></li>
+    <li><a href="#projet"><span class="tab">05</span> <span class="t-fr">Projet</span><span class="t-en" hidden>Project</span></a></li>
+    <li><a href="#contact"><span class="tab">06</span> <span class="t-fr">Contact</span><span class="t-en" hidden>Contact</span></a></li>
   </ul>
-  <a class="spine-cta" href="mailto:juliette-guyot@outlook.fr">Écrire</a>
+  <div class="spine-footer">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+    <a class="spine-cta" href="mailto:juliette-guyot@outlook.fr"><span class="t-fr">Écrire</span><span class="t-en" hidden>Email me</span></a>
+  </div>
 </nav>
 
 <main id="top">
@@ -35,10 +39,15 @@
     <div class="hero-text">
       <p class="eyebrow">Data Analytics, emlyon × Sorbonne</p>
       <h1>Juliette<br>Guyot</h1>
-      <p class="hero-sub">De la performance commerciale en boutique à l'analyse de données.</p>
+      <p class="hero-sub t-fr">De la performance commerciale en boutique à l'analyse de données.</p>
+      <p class="hero-sub t-en" hidden>From commercial performance in-store to data analysis.</p>
       <div class="hero-links">
         <a class="pill pill-solid" href="https://www.linkedin.com/in/juliette-guyot-634b57249" target="_blank" rel="noopener">LinkedIn</a>
         <a class="pill" href="mailto:juliette-guyot@outlook.fr">juliette-guyot@outlook.fr</a>
+      </div>
+      <div class="hero-links hero-links-cv">
+        <a class="pill pill-outline" href="assets/Juliette_Guyot_CV_FR.pdf" target="_blank" rel="noopener">CV — Français</a>
+        <a class="pill pill-outline" href="assets/Juliette_Guyot_CV_EN.pdf" target="_blank" rel="noopener">CV — English</a>
       </div>
     </div>
     <div class="hero-photo">
@@ -47,8 +56,8 @@
   </section>
 
   <section class="block" id="profil">
-    <h2><span class="tab">A</span> Profil</h2>
-    <p class="lede">
+    <h2><span class="tab">01</span> <span class="t-fr">Profil</span><span class="t-en" hidden>Profile</span></h2>
+    <p class="lede t-fr">
       Diplômée du BBA de l'EDHEC Business School, je poursuis aujourd'hui le
       <strong>Master in Digital Marketing &amp; Data Analytics à emlyon</strong>, en parallèle
       du <strong>DU Data Analytics de la Sorbonne</strong>. Une trajectoire nourrie
@@ -57,89 +66,129 @@
       cette curiosité en compétences concrètes, et faire de l'analyse un vrai terrain
       d'expression créative.
     </p>
+    <p class="lede t-en" hidden>
+      A graduate of EDHEC Business School's BBA, I'm currently pursuing the
+      <strong>Master in Digital Marketing &amp; Data Analytics at emlyon</strong>, alongside
+      the <strong>DU Data Analytics at Sorbonne</strong>. A path shaped by hands-on
+      experience — including an internship at Chanel in business development — that sparked
+      my interest in data as a driver of decision-making. Today, I'm learning Python and SQL
+      to turn that curiosity into concrete skills, and to make analysis a genuine outlet for
+      creativity.
+    </p>
     <ul class="tags">
       <li>Business &amp; Retail Analytics</li>
-      <li>Reporting &amp; KPI</li>
-      <li>Python · SQL <span class="tag-note">en cours</span></li>
+      <li><span class="t-fr">Reporting &amp; KPI</span><span class="t-en" hidden>Reporting &amp; KPIs</span></li>
+      <li>Python · SQL <span class="tag-note t-fr">en cours</span><span class="tag-note t-en" hidden>in progress</span></li>
     </ul>
   </section>
 
   <section class="block" id="experience">
-    <h2><span class="tab">B</span> Expérience</h2>
+    <h2><span class="tab">02</span> <span class="t-fr">Expérience</span><span class="t-en" hidden>Experience</span></h2>
 
     <article class="entry">
-      <div class="entry-date">2026<br><span>6 mois</span></div>
+      <div class="entry-date">2026<br><span class="t-fr">6 mois</span><span class="t-en" hidden>6 months</span></div>
       <div class="entry-body">
-        <h3>Assistante Développement Commercial</h3>
-        <p class="entry-org"><strong>Chanel</strong> — Parfums &amp; Beauté, Wholesale — Paris</p>
-        <ul>
+        <h3 class="t-fr">Assistante Développement Commercial</h3>
+        <h3 class="t-en" hidden>Business Development Assistant</h3>
+        <p class="entry-org t-fr"><strong>Chanel</strong> — Parfums &amp; Beauté, Wholesale — Paris</p>
+        <p class="entry-org t-en" hidden><strong>Chanel</strong> — Fragrance &amp; Beauty, Wholesale — Paris</p>
+        <ul class="t-fr">
           <li>Suivi de la performance commerciale sur un réseau de 1&nbsp;500+ boutiques Wholesale : suivi des ventes, analyse des KPIs et identification des leviers de croissance</li>
           <li>Exploitation de dashboards Power BI pour en extraire des analyses de performance, destinées aux équipes commerciales et à la direction</li>
           <li>Consolidation de données multi-sources (ventes, activations, CRM) avec contrôle de cohérence, garantissant la fiabilité des tableaux de bord</li>
           <li>Diffusion hebdomadaire d'analyses et de recommandations stratégiques via une newsletter réseau, à destination des équipes terrain et des services centraux</li>
           <li>Point de contact direct avec les équipes terrain, les accompagnant dans la prise en main des outils et reportings (applications, dashboards)</li>
         </ul>
+        <ul class="t-en" hidden>
+          <li>Tracked commercial performance across a network of 1,500+ Wholesale boutiques: sales monitoring, KPI analysis, and identification of growth levers</li>
+          <li>Leveraged Power BI dashboards to extract performance insights for commercial teams and senior management</li>
+          <li>Consolidated multi-source data (sales, activations, CRM) with consistency checks, ensuring reliable dashboards</li>
+          <li>Distributed weekly analyses and strategic recommendations via a network newsletter, reaching field teams and central departments</li>
+          <li>Acted as the direct point of contact with field teams, supporting them with tools and reports (apps, dashboards)</li>
+        </ul>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-date">2025<br><span>6 mois</span></div>
+      <div class="entry-date">2025<br><span class="t-fr">6 mois</span><span class="t-en" hidden>6 months</span></div>
       <div class="entry-body">
-        <h3>Assistante Learning Manager Retail</h3>
+        <h3 class="t-fr">Assistante Learning Manager Retail</h3>
+        <h3 class="t-en" hidden>Retail Learning Manager Assistant</h3>
         <p class="entry-org"><strong>Chanel</strong> — Flagships Grand Cambon — Paris</p>
-        <ul>
+        <ul class="t-fr">
           <li>Coordination de l'onboarding retail et des parcours de formation en flagships (présentiel &amp; e-learning), avec suivi des KPIs et support opérationnel</li>
           <li>Adaptation de formations existantes (fournies par le siège) et conception de formations originales</li>
           <li>Gestion logistique des inscriptions et mise à jour continue des plans de formation</li>
           <li>Analyse de la performance et de l'assiduité aux formations pour identifier les axes d'amélioration</li>
         </ul>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="entry-date">2024<br><span>3 mois</span></div>
-      <div class="entry-body">
-        <h3>Assistante Marketing Digital</h3>
-        <p class="entry-org"><strong>Absoluty</strong> — Antibes</p>
-        <ul>
-          <li>Mise en place de la stratégie SEO organique depuis zéro, puis suivi et gestion continue de la performance SEO</li>
-          <li>Gestion de campagnes CRM Email et Google Ads, analyse des KPIs pour optimiser la performance</li>
-          <li>Création de contenu visuel et gestion des réseaux sociaux</li>
+        <ul class="t-en" hidden>
+          <li>Coordinated retail onboarding and training pathways across flagship stores (in-person &amp; e-learning), with KPI tracking and operational support</li>
+          <li>Adapted existing training content (provided by headquarters) and designed original training formats</li>
+          <li>Managed enrollment logistics and kept training plans up to date</li>
+          <li>Analyzed training performance and attendance to identify improvement areas</li>
         </ul>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-date">2023<br><span>3 mois</span></div>
+      <div class="entry-date">2024<br><span class="t-fr">3 mois</span><span class="t-en" hidden>3 months</span></div>
       <div class="entry-body">
-        <h3>Conseillère de Vente</h3>
+        <h3 class="t-fr">Assistante Marketing Digital</h3>
+        <h3 class="t-en" hidden>Digital Marketing Assistant</h3>
+        <p class="entry-org"><strong>Absoluty</strong> — Antibes</p>
+        <ul class="t-fr">
+          <li>Mise en place de la stratégie SEO organique depuis zéro, puis suivi et gestion continue de la performance SEO</li>
+          <li>Gestion de campagnes CRM Email et Google Ads, analyse des KPIs pour optimiser la performance</li>
+          <li>Création de contenu visuel et gestion des réseaux sociaux</li>
+        </ul>
+        <ul class="t-en" hidden>
+          <li>Built the organic SEO strategy from scratch, then tracked and managed ongoing SEO performance</li>
+          <li>Managed CRM email and Google Ads campaigns, analyzing KPIs to optimize performance</li>
+          <li>Created visual content and managed social media accounts</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-date">2023<br><span class="t-fr">3 mois</span><span class="t-en" hidden>3 months</span></div>
+      <div class="entry-body">
+        <h3 class="t-fr">Conseillère de Vente</h3>
+        <h3 class="t-en" hidden>Sales Advisor</h3>
         <p class="entry-org"><strong>Hermès</strong> — Cannes</p>
-        <ul>
+        <ul class="t-fr">
           <li>Incarnation des codes du luxe et optimisation d'une expérience client personnalisée favorisant la fidélisation</li>
           <li>Atteinte et dépassement des objectifs de vente grâce au travail d'équipe et à une présentation irréprochable du point de vente</li>
+        </ul>
+        <ul class="t-en" hidden>
+          <li>Delivered a personalized, high-end client experience, embodying luxury retail standards to drive customer loyalty</li>
+          <li>Consistently met and exceeded sales targets through strong teamwork and impeccable store presentation</li>
         </ul>
       </div>
     </article>
   </section>
 
   <section class="block" id="formation">
-    <h2><span class="tab">C</span> Formation</h2>
+    <h2><span class="tab">03</span> <span class="t-fr">Formation</span><span class="t-en" hidden>Education</span></h2>
 
     <article class="entry">
       <div class="entry-date">2026—2027</div>
       <div class="entry-body">
         <h3>Master in Digital Marketing &amp; Data Analytics</h3>
-        <p class="entry-org">emlyon business school — Année 2</p>
-        <p class="entry-note">Formation avancée alliant marketing digital et data analytics, suivie en parallèle du DU Data Analytics de la Sorbonne. Approfondissement de compétences en Python, SQL et modélisation de données appliquées au business.</p>
+        <p class="entry-org t-fr">emlyon business school — Année 2</p>
+        <p class="entry-org t-en" hidden>emlyon business school — Year 2</p>
+        <p class="entry-note t-fr">Formation avancée alliant marketing digital et data analytics, suivie en parallèle du DU Data Analytics de la Sorbonne. Approfondissement de compétences en Python, SQL et modélisation de données appliquées au business.</p>
+        <p class="entry-note t-en" hidden>Advanced program combining digital marketing and data analytics, taken alongside the DU Data Analytics at Sorbonne. Building hands-on skills in Python, SQL, and data modeling applied to business.</p>
       </div>
     </article>
 
     <article class="entry">
       <div class="entry-date">2026—2027</div>
       <div class="entry-body">
-        <h3>DU Data Analytics</h3>
+        <h3 class="t-fr">DU Data Analytics</h3>
+        <h3 class="t-en" hidden>DU Data Analytics (University Diploma)</h3>
         <p class="entry-org">Sorbonne Université</p>
-        <p class="entry-note">Statistiques appliquées, programmation (Python, SQL) et traitement de données à grande échelle, suivi en parallèle du Master emlyon.</p>
+        <p class="entry-note t-fr">Statistiques appliquées, programmation (Python, SQL) et traitement de données à grande échelle, suivi en parallèle du Master emlyon.</p>
+        <p class="entry-note t-en" hidden>Applied statistics, programming (Python, SQL), and large-scale data processing, taken alongside the emlyon Master's program.</p>
       </div>
     </article>
 
@@ -147,72 +196,80 @@
       <div class="entry-date">2022—2026</div>
       <div class="entry-body">
         <h3>BBA Business Management</h3>
-        <p class="entry-org">EDHEC Business School — Spécialisation marketing du luxe</p>
-        <p class="entry-note">Fondamentaux du business (finance, stratégie, management) associés à une expertise en stratégie de marque, comportement du consommateur et dynamiques retail dans l'univers du luxe.</p>
+        <p class="entry-org t-fr">EDHEC Business School — Spécialisation marketing du luxe</p>
+        <p class="entry-org t-en" hidden>EDHEC Business School — Luxury Marketing specialization</p>
+        <p class="entry-note t-fr">Fondamentaux du business (finance, stratégie, management) associés à une expertise en stratégie de marque, comportement du consommateur et dynamiques retail dans l'univers du luxe.</p>
+        <p class="entry-note t-en" hidden>Core business fundamentals (finance, strategy, management) combined with expertise in brand strategy, consumer behavior, and retail dynamics in the luxury industry.</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-date">2025<br><span>4 mois</span></div>
+      <div class="entry-date">2025<br><span class="t-fr">4 mois</span><span class="t-en" hidden>4 months</span></div>
       <div class="entry-body">
-        <h3>Certificat Inside LVMH</h3>
+        <h3 class="t-fr">Certificat Inside LVMH</h3>
+        <h3 class="t-en" hidden>Inside LVMH Certificate</h3>
         <p class="entry-org">Inside LVMH — Online</p>
         <p class="entry-note">Création &amp; Branding, Retail &amp; Client Experience</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-date">2024<br><span>5 mois</span></div>
+      <div class="entry-date">2024<br><span class="t-fr">5 mois</span><span class="t-en" hidden>5 months</span></div>
       <div class="entry-body">
         <h3>Business of Luxury</h3>
         <p class="entry-org">Columbia University — Online</p>
-        <p class="entry-note">Programme explorant le comportement du consommateur de luxe et les modèles économiques des grandes maisons de mode et de luxe, suivi en ligne via Columbia University.</p>
+        <p class="entry-note t-fr">Programme explorant le comportement du consommateur de luxe et les modèles économiques des grandes maisons de mode et de luxe, suivi en ligne via Columbia University.</p>
+        <p class="entry-note t-en" hidden>Program exploring luxury consumer behavior and the business models of major fashion and luxury houses, completed online through Columbia University.</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-date">2024<br><span>6 mois</span></div>
+      <div class="entry-date">2024<br><span class="t-fr">6 mois</span><span class="t-en" hidden>6 months</span></div>
       <div class="entry-body">
         <h3>Global Manager Certificate (GMC)</h3>
         <p class="entry-org">PACE Lubin School of Business — New York</p>
-        <p class="entry-note">Programme couvrant le marketing digital stratégique, l'analyse visuelle de données et le commerce international, suivi lors d'un échange académique à New York.</p>
+        <p class="entry-note t-fr">Programme couvrant le marketing digital stratégique, l'analyse visuelle de données et le commerce international, suivi lors d'un échange académique à New York.</p>
+        <p class="entry-note t-en" hidden>Program covering strategic digital marketing, visual analytics, and international trade and business, completed during an academic exchange in New York.</p>
       </div>
     </article>
 
     <article class="entry">
       <div class="entry-date">2022</div>
       <div class="entry-body">
-        <h3>Baccalauréat général — Mention Très Bien</h3>
+        <h3 class="t-fr">Baccalauréat général — Mention Très Bien</h3>
+        <h3 class="t-en" hidden>French Baccalauréat — High Honors</h3>
         <p class="entry-org">Lycée Stanislas</p>
-        <p class="entry-note">Spécialités Mathématiques et Sciences Économiques et Sociales (SES)</p>
+        <p class="entry-note t-fr">Spécialités Mathématiques et Sciences Économiques et Sociales (SES)</p>
+        <p class="entry-note t-en" hidden>Mathematics and Social &amp; Economic Sciences (SES) specialties</p>
       </div>
     </article>
   </section>
 
   <section class="block" id="competences">
-    <h2><span class="tab">D</span> Compétences</h2>
+    <h2><span class="tab">04</span> <span class="t-fr">Compétences</span><span class="t-en" hidden>Skills</span></h2>
 
     <div class="ledger">
       <div class="ledger-col">
         <p class="ledger-label">Business &amp; BI</p>
         <table>
           <tbody>
-            <tr><td>Power BI</td><td class="ledger-mark">acquis</td></tr>
-            <tr><td>Tableau</td><td class="ledger-mark">acquis</td></tr>
-            <tr><td>Google Analytics</td><td class="ledger-mark">acquis</td></tr>
-            <tr><td>Salesforce</td><td class="ledger-mark">acquis</td></tr>
-            <tr><td>SEMrush</td><td class="ledger-mark">acquis</td></tr>
-            <tr><td>Excel</td><td class="ledger-mark">acquis</td></tr>
+            <tr><td>Power BI</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
+            <tr><td>Tableau</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
+            <tr><td>Google Analytics</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
+            <tr><td>Salesforce</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
+            <tr><td>SEMrush</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
+            <tr><td>Excel</td><td class="ledger-mark t-fr">acquis</td><td class="ledger-mark t-en" hidden>acquired</td></tr>
           </tbody>
         </table>
       </div>
       <div class="ledger-col">
-        <p class="ledger-label">Data — en construction</p>
+        <p class="ledger-label t-fr">Data — en construction</p>
+        <p class="ledger-label t-en" hidden>Data — in progress</p>
         <table>
           <tbody>
-            <tr><td>Python</td><td class="ledger-mark ledger-progress">en cours</td></tr>
-            <tr><td>SQL</td><td class="ledger-mark ledger-progress">en cours</td></tr>
-            <tr><td>Git &amp; GitHub</td><td class="ledger-mark ledger-progress">en cours</td></tr>
+            <tr><td>Python</td><td class="ledger-mark ledger-progress t-fr">en cours</td><td class="ledger-mark ledger-progress t-en" hidden>in progress</td></tr>
+            <tr><td>SQL</td><td class="ledger-mark ledger-progress t-fr">en cours</td><td class="ledger-mark ledger-progress t-en" hidden>in progress</td></tr>
+            <tr><td>Git &amp; GitHub</td><td class="ledger-mark ledger-progress t-fr">en cours</td><td class="ledger-mark ledger-progress t-en" hidden>in progress</td></tr>
           </tbody>
         </table>
       </div>
@@ -220,20 +277,28 @@
   </section>
 
   <section class="block" id="projet">
-    <h2><span class="tab">E</span> Projet</h2>
+    <h2><span class="tab">05</span> <span class="t-fr">Projet</span><span class="t-en" hidden>Project</span></h2>
     <div class="project-slot">
-      <p class="project-eyebrow">Mini-projet data — retail &amp; luxe</p>
-      <p>Analyse d'un jeu de données retail, du nettoyage à un dashboard Streamlit déployé.<br>
+      <p class="project-eyebrow t-fr">Mini-projet data — retail &amp; luxe</p>
+      <p class="project-eyebrow t-en" hidden>Data mini-project — retail &amp; luxury</p>
+      <p class="t-fr">Analyse d'un jeu de données retail, du nettoyage à un dashboard Streamlit déployé.<br>
       SQL · Python · Streamlit — à venir.</p>
+      <p class="t-en" hidden>Analysis of a retail dataset, from data cleaning to a deployed Streamlit dashboard.<br>
+      SQL · Python · Streamlit — coming soon.</p>
     </div>
   </section>
 
   <section class="block block-contact" id="contact">
-    <h2><span class="tab">F</span> Contact</h2>
-    <p class="lede">Ouverte aux échanges autour de la data, du retail et du luxe.</p>
+    <h2><span class="tab">06</span> <span class="t-fr">Contact</span><span class="t-en" hidden>Contact</span></h2>
+    <p class="lede t-fr">Ouverte aux échanges autour de la data, du retail et du luxe.</p>
+    <p class="lede t-en" hidden>Open to conversations about data, retail, and luxury.</p>
     <div class="hero-links">
       <a class="pill pill-solid" href="mailto:juliette-guyot@outlook.fr">juliette-guyot@outlook.fr</a>
       <a class="pill" href="https://www.linkedin.com/in/juliette-guyot-634b57249" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="hero-links hero-links-cv">
+      <a class="pill pill-outline" href="assets/Juliette_Guyot_CV_FR.pdf" target="_blank" rel="noopener">CV — Français</a>
+      <a class="pill pill-outline" href="assets/Juliette_Guyot_CV_EN.pdf" target="_blank" rel="noopener">CV — English</a>
     </div>
   </section>
 
@@ -248,14 +313,66 @@
   const spine = document.getElementById('spine');
   toggle.addEventListener('click', () => {
     const open = spine.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', open);
   });
   spine.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       spine.classList.remove('is-open');
+      toggle.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Language toggle (FR / EN)
+  const langToggle = document.getElementById('langToggle');
+  const frEls = document.querySelectorAll('.t-fr');
+  const enEls = document.querySelectorAll('.t-en');
+
+  function setLang(lang) {
+    const isEn = lang === 'en';
+    frEls.forEach(el => { el.hidden = isEn; });
+    enEls.forEach(el => { el.hidden = !isEn; });
+    document.documentElement.lang = isEn ? 'en' : 'fr';
+    langToggle.textContent = isEn ? 'FR' : 'EN';
+    langToggle.setAttribute('aria-label', isEn ? 'Passer en français' : 'Switch to English');
+    localStorage.setItem('site-lang', lang);
+  }
+
+  langToggle.addEventListener('click', () => {
+    const current = document.documentElement.lang === 'en' ? 'en' : 'fr';
+    setLang(current === 'en' ? 'fr' : 'en');
+  });
+
+  const savedLang = localStorage.getItem('site-lang');
+  if (savedLang === 'en') setLang('en');
+
+  // Scrollspy: highlight active section + slide indicator
+  const navLinks = Array.from(spine.querySelectorAll('ul a[href^="#"]'));
+  const indicator = document.getElementById('spineIndicator');
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActive(link) {
+    if (!link) return;
+    navLinks.forEach(l => l.classList.remove('is-active'));
+    link.classList.add('is-active');
+    indicator.style.transform = `translateY(${link.offsetTop}px)`;
+    indicator.classList.add('is-visible');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
+        const link = navLinks.find(l => l.getAttribute('href') === id);
+        setActive(link);
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
