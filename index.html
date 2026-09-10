@@ -16,6 +16,10 @@
   <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="spine">
     <span></span>
   </button>
+  <div class="current-section" id="currentSection" aria-hidden="true">
+    <span class="tab" id="currentTab">01</span>
+    <span id="currentLabel">Profil</span>
+  </div>
   <div class="topbar-right">
     <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
     <a class="topbar-initials" href="#top">JG</a>
@@ -351,11 +355,36 @@
   const savedLang = localStorage.getItem('site-lang');
   if (savedLang === 'en') setLang('en');
 
-  // Scrollspy: highlight active section in the menu
+  // Scrollspy: highlight active section in the menu + slide indicator in top bar
   const navLinks = Array.from(spine.querySelectorAll('ul a[href^="#"]'));
   const sections = navLinks
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
+
+  const currentSection = document.getElementById('currentSection');
+  const currentTab = document.getElementById('currentTab');
+  const currentLabel = document.getElementById('currentLabel');
+  let activeHref = null;
+
+  function updateIndicator(link) {
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href === activeHref) return;
+    activeHref = href;
+
+    const num = link.querySelector('.tab').textContent;
+    const isEn = document.documentElement.lang === 'en';
+    const labelEl = link.querySelector(isEn ? '.t-en' : '.t-fr');
+    const text = labelEl ? labelEl.textContent : link.textContent.trim();
+
+    currentSection.classList.add('is-visible');
+    currentLabel.classList.add('is-sliding');
+    setTimeout(() => {
+      currentTab.textContent = num;
+      currentLabel.textContent = text;
+      currentLabel.classList.remove('is-sliding');
+    }, 180);
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -364,6 +393,7 @@
         const link = navLinks.find(l => l.getAttribute('href') === id);
         navLinks.forEach(l => l.classList.remove('is-active'));
         if (link) link.classList.add('is-active');
+        updateIndicator(link);
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
